@@ -5,7 +5,7 @@ interface TodoFormProps {
 }
 
 const TodoForm: React.FC<TodoFormProps> = ({ onAdd }) => {
-  const [description, setDescription] = useState<string>('');
+  const [description, setDescription] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,14 +16,17 @@ const TodoForm: React.FC<TodoFormProps> = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', marginBottom: '20px' }}>
       <input
         type="text"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        placeholder="Enter todo..."
+        placeholder="Enter new todo..."
+        style={{ flexGrow: 1, padding: '8px' }}
       />
-      <button type="submit">Add</button>
+      <button type="submit" style={{ marginLeft: '10px', padding: '8px 16px' }}>
+        Add
+      </button>
     </form>
   );
 };

@@ -1,9 +1,10 @@
 import React from 'react';
-import { TodoItem } from '../types/TodoItem';
+import { ITodo } from '../types/Todo';
 
 interface TodoListProps {
-  todos: TodoItem[];
-  onDelete: (id: number) => Promise<void>; // Учитываем асинхронную природу
+  todos: ITodo[];
+  onDelete: (id: number) => Promise<void>;
+  onToggle: (id: number, completed: boolean) => Promise<void>; // Добавляем
 }
 
 
